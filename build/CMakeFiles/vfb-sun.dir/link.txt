@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvfb-sun.a CMakeFiles/vfb-sun.dir/vfb-sun.cpp.o
+/usr/bin/ranlib libvfb-sun.a

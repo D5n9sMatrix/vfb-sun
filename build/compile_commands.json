@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/denis/vfb-net/vfb-sun/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/vfb-sun.dir/vfb-sun.cpp.o -c /home/denis/vfb-net/vfb-sun/vfb-sun.cpp",
+  "file": "/home/denis/vfb-net/vfb-sun/vfb-sun.cpp"
+}
+]

@@ -1,0 +1,358 @@
+for not out of memory of a string you must
+------------------------------------------
+//create a new string from a constant string
+char *s;
+s=newString("hello world...");
+print(s);
+free(s);
+-------------------------------------------
+//add text into a string
+char *s;
+s=newString("hello world...");
+s=catString(s,"hi...");
+print(s);
+frees(s);
+----------------------------------------------
+//create a string to same char
+char *s;
+s=strString('*',20);
+frees(s);
+----------------------------------------------
+//add a sub string to start of the string
+char *s;
+s=newString("hello world...");
+s=appendString(s,'*',20);
+print(s);
+frees(s);
+----------------------------------------------
+//add a sub string to start of the string
+char *s;
+s=newString("hello world...");
+s=frontString(s,'*',20);
+print(s);
+frees(s);
+----------------------------------------------
+//replacing chars only
+char *s;
+s=strString('*',20);
+print(s);
+replaceCharString(s,'*','!');
+print(s);
+frees(s);
+----------------------------------------------
+//append part of a string
+char *s;
+char *s2;
+s2=strString('*',20);
+s=newString("hello world...");
+s=catNString(s,s2,5);
+print(s);
+frees(s);
+frees(s2);
+----------------------------------------------
+//replace a string in other
+char *s;
+char *s2;
+s=newString("hello world...");
+s2=replaceString(s1,"world","wr");
+print(s2);
+frees(s);
+frees(s2);
+----------------------------------------------
+//create a list 
+char *lst;
+lst=newPointer("item 1");
+lst=addPointer(lst,"item 2");
+printList(lst);
+frees(lst);
+----------------------------------------------
+//split a string
+char *lst;
+char *s;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+printList(lst);
+frees(lst);
+frees(s);
+----------------------------------------------
+//format of a list firth item is the size of the array
+----------------------------------------------
+//rtrim string remove spaces and null chaters from rigth of the string
+char *s;
+char *ss;
+s=newString("hello world...                ");
+ss=rtrim(s);
+print(s);
+print(ss);
+frees(s);
+frees(ss);
+----------------------------------------------
+//ltrim string remove spaces and null chaters from left of the string
+char *s;
+char *ss;
+s=newString("                  hello world...");
+print(s);
+ss=ltrim(s);
+print(ss);
+frees(s);
+----------------------------------------------
+//mid string creates a new string using part of a sub string
+char *s;
+char *ss;
+s=newString("012345678901234567890");
+print(s);
+ss=mid(s,5,10);
+print(ss);
+frees(s);
+frees(ss);
+----------------------------------------------
+//rigth string create n char of the rigth of the string 
+char *s;
+char *ss;
+s=newString("012345678901234567890");
+print(s);
+ss=rigths(s,10);
+print(ss);
+frees(s);
+frees(ss);
+----------------------------------------------
+//lefts string return n char from a string
+char *s;
+char *ss;
+s=newString("012345678901234567890");
+print(s);
+ss=lefts(s,10);
+print(ss);
+frees(s);
+----------------------------------------------
+//edit string create add same chars to the midlle of a string 
+char *s;
+char *ss;
+s=newString("012345678901234567890");
+print(s);
+ss=edit(s,10,10,'>');
+print(ss);
+frees(s);
+frees(ss);
+----------------------------------------------
+//deledit string delete same char in midlle of a string 
+char *s;
+char *ss;
+s=newString("012345678901234567890");
+print(s);
+ss=deledit(s,10,7);
+print(ss);
+frees(s);
+------------------------------------------------------
+****LISTS
+------------------------------------------------------
+//split a string
+char *lst;
+char *s;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+printList(lst);
+frees(lst);
+frees(s);
+---------------------------------------------------
+//new list add item
+char *lst;
+lst=newPoiter("1st item");
+lst=addPoiter(lst,"2st item");
+printList(lst);
+frees(lst);
+-----------------------------------------------------
+//delete item
+char *lst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+lst=deleteItem(lst,pos);
+printList(lst);
+frees(lst);
+frees(s);
+-----------------------------------------------------
+//insert item at position index
+char *lst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+lst=insertItem(lst,pos,"new item");
+printList(lst);
+frees(lst);
+frees(s);
+-----------------------------------------------------
+//insert item at end of the list
+char *lst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+lst=addPointer(lst,"new item");
+printList(lst);
+frees(lst);
+frees(s);
+-----------------------------------------------------
+//clone list
+char *lst;
+char newlst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+newlst=cloneList(lst);
+printList(newlst);
+frees(lst);
+frees(newlst);
+frees(s);
+-----------------------------------------------------
+//clone list item
+char *lst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+lst=holeitem(lst,pos);
+printList(newlst);
+frees(lst);
+frees(s);
+-----------------------------------------------------
+//change list item
+char *lst;
+char *s;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+lst=holeitem(lst,pos);
+setItem(lst,pos,"new item");
+printList(newlst);
+frees(lst);
+frees(s);
+-----------------------------------------------------
+//get list item
+char *lst;
+char *s;
+char *s1;
+int pos=3;
+s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+lst=splitString(s,',');
+s1=getitem(lst,pos);
+print(s1);
+frees(lst);
+frees(s);
+frees(s1);
+-----------------------------------------------------
+	//count of list item
+	char *lst;
+	char *s;
+	char *s1;
+	int pos=0;
+	s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+	lst=splitString(s,',');
+	printList(lst);
+	pos=countList(lst);
+	printf("%d\n",pos);
+	frees(lst);
+	frees(s);
+-----------------------------------------------------
+	//toString of list item
+	char *lst;
+	char *s;
+	char *s1;
+	int pos=0;
+	print(d);
+	s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+	lst=splitString(s,',');
+	printList(lst);
+	s1=ListToString(lst,'|');
+	print(s1);
+	frees(lst);
+	frees(s);
+	frees(s1);
+-----------------------------------------------------
+	//revert of list item
+	char *lst;
+	char *lst2;
+	char *s;
+	char *s1;
+	int pos=0;
+	print(d);
+	s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+	lst=splitString(s,',');
+	lst2=invertList(lst);
+	printList(lst2);
+	frees(lst2);
+	frees(lst);
+	frees(s);
+-----------------------------------------------------
+	//order of list item
+	char *lst;
+	char *lst2;
+	char *s;
+	char *s1;
+	int pos=0;
+	s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+	lst=splitString(s,',');
+	lst2=invertList(lst);
+	frees(lst);
+	lst=orderList(lst2);
+	printList(lst);
+	frees(lst2);
+	frees(s);
+-----------------------------------------------------
+	//decedent order of list item
+	char *lst;
+	char *lst2;
+	char *s;
+	char *s1;
+	int pos=0;
+	s=newString("arg0,arg1,arg2,arg3,arg4,arg5");
+	lst=splitString(s,',');
+	lst2=zorderList(lst);
+	printList(lst2);
+	frees(lst);
+	frees(lst2);
+	frees(s);
+-----------------------------------------------------
+	//create a dinamic list and is nodes and frees all nodes
+	char *lst;
+	char *lst2;
+	char *s;
+	char *s1;
+	int n=0;
+	int pos=0;
+	char ss[2080];
+	s=ss;
+	for(n=0;n<16;n++){
+		sprintf(s,"item %d",n);
+		if(n==0){
+			lst=newList(s);
+		}else{
+			lst=addList(lst,s);
+		}
+	}
+	printList(lst);
+	freeList(lst);
+-----------------------------------------------------
+	//list a number of itens
+	char *lst;
+	char *lst2;
+	char *s;
+	char *s1;
+	int n=0;
+	int pos=0;
+	char ss[2080];
+	s=ss;
+	for(n=0;n<64;n++){
+		sprintf(s,"item %d",n);
+		if(n==0){
+			lst=newList(s);
+		}else{
+			lst=addList(lst,s);
+		}
+	}
+	printnList(lst,16,16);
+	freeList(lst);
+-----------------------------------------------------
